@@ -1,6 +1,7 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import rsk.Student
 
-    // Try adding program arguments at Run/Debug configuration
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+    val kevin= Student("Kevin","Jones",1,"Some tutor")
+
+    println(Student.createPostgraduate("Michael"))
 }
