@@ -8,7 +8,9 @@ public class Organizer {
 
     public static void main(String[] args) {
         Organizer org = new Organizer();
-        org.closeMeeting(null);
+        Meeting m = new Meeting();
+        Boolean result=org.closeMeeting(null);
+        System.out.println(result);
     }
 }
 

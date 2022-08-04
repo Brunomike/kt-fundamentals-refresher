@@ -1,5 +1,7 @@
 package rsk.java;
 
+import org.jetbrains.annotations.NotNull;
+
 public class User {
     private String name;
 
@@ -7,7 +9,7 @@ public class User {
         this.name = name;
     }
 
-    public void create(Created created) {
+    public void create(@NotNull Created created) {
         created.onCreate(this);
     }
 

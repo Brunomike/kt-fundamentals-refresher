@@ -1,3 +1,4 @@
+import rsk.java.Address
 import rsk.java.MeetingN
 
 fun main(args: Array<String>) {
@@ -10,6 +11,22 @@ fun main(args: Array<String>) {
 //
 //    println(title)
 
-    val title:String =m.titleCanBeNull()?:"nobody"
+    val title: String = m.titleCanBeNull() ?: "nobody"
     println(title)
+
+//    val homeAddress=HomeAddress()
+//    println(homeAddress.firstAddress)
 }
+
+class HomeAddress : Address {
+    override fun getFirstAddress(): String {
+        return "Home Address";
+    }
+}
+
+class WorkAddress : Address {
+    override fun getFirstAddress(): String? {
+        return "Work Address";
+    }
+}
+

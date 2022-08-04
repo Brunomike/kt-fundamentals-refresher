@@ -1,32 +1,32 @@
 fun main(args: Array<String>) {
-    var m: Meeting? = null
-    var newMeeting = Meeting()
+    var m: MeetingKt? = null
+    var newMeeting = MeetingKt()
 
-    newMeeting = m ?: Meeting()
+    newMeeting = m ?: MeetingKt()
 
     closeMeeting(m)
+    //NPE caught when we pass null actual parameters to non-null argument type
     closeMeeting(newMeeting)
 
     m?.let {
         closeMeetingNonNull(m)
     }
 
-
 }
 
-fun closeMeetingNonNull(m: Meeting): Boolean? {
+fun closeMeetingNonNull(m: MeetingKt): Boolean? {
     return if (m.canClose) m.close()
     else false
 }
 
-fun closeMeeting(m: Meeting?): Boolean {
+fun closeMeeting(m: MeetingKt?): Boolean {
 //    return if (m?.canClose == true) m?.close()
 //    else false
     return if (m!!.canClose) m!!.close()
     else false
 }
 
-class Meeting {
+class MeetingKt {
     val canClose: Boolean = false
     lateinit var address: Address
 
